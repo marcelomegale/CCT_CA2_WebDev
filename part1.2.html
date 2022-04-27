@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+        <meta name="description" content="" />
+        <meta name="author" content="" />
+        <title>WebDev CA2</title>
+        <!-- Favicon-->
+        <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
+        <!-- Core theme CSS (includes Bootstrap)-->
+        <link href="css/styles.css" rel="stylesheet" />
+        <link href="css/custom.css" rel="stylesheet" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.58.1/codemirror.css">
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.58.1/codemirror.js"></script>
+        <script src="js/sql.js"></script>
+        <script>
+            function reply_click(clicked_object)
+                {
+                    var sql = clicked_object.getAttribute('data-sql');
+                    console.log(sql);
+                    editor.setValue(sql);
+                }
+        </script>
+    </head>
+    <body>
+
+        <!-- Responsive navbar -->
+
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+            <div class="container">
+                <a class="navbar-brand" href="#">CA2: Data Manipulation and Validation</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                        <li class="nav-item"><a class="nav-link active" aria-current="page" href="index.html">Home</a></li>
+                        <li class="nav-item"><a class="nav-link" href="about.html">About me</a></li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" id="navbarDropdown" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Querys</a>
+                            <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
+                                <li><a class="dropdown-item" href="part1.1.html">Part 1.1</a></li>
+                                <li><a class="dropdown-item" href="part1.2.html">Part 1.2</a></li>
+                                <li><a class="dropdown-item" href="part1.3.html">Part 1.3</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+
+        <!--/ Responsive navbar -->
+
+        <!-- Page content-->
+
+        <div id="intro" class="container">
+          <div class="row">
+                <div class="col-lg-12 text-center">
+                    <h1>PART 2</h1>  
+                </div>
+                <div class="col-lg-2 order-1"><img src="img/cct_logo_V.jpg" class="img-fluid" alt="Logo Vertical CCT"></div>
+                <div class="col-lg-10 order-2 mb-3 d-flex flex-column gap-2 mx-auto align-items-stretch">
+                    <p class="lead">Read the questions below and click on the buttons referring to it to see the result.</p>
+                    <ul>
+                        <li><b>Task 1 - </b>The number of all employees that started on <b>1991-05-01</b></li>
+                        <li><b>Task 2 - </b>List all emp_no who have had strictly <b>more than 2</b> titles and display the total number of the titles they have had</li>
+                        <li><b>Task 3 - </b>List <b>female employees</b> (past/current) together with all other relation attributes</li>
+                        <li><b>Task 4 - </b>List past/current employees hired prior to <b>1986-01-01</b> with the surname <b>Simmel</b></li>
+                        <li><b>Task 5 - </b>How many past/current employees’ last name begins with the <b>capital letter "B"</b>? Use a column alias <b>Total with "B"</b> to output your results</li>
+                        <li><b>Task 6 - </b>Create a new table called emp_training with 3 columns
+                        <ul>
+                            <li><em>trainer_no:</em> this should be the primary key and is of type integer and is an auto-increment.</li>
+                            <li><em>first_name:</em> this data type is varchar(30) and should not be NULL</li>
+                            <li><em>last_name:</em> this data type is varchar(30) and should not be NULL</li>
+                            <li><em>t_module:</em> this data type is varchar(20)</li>
+                        </ul>
+                        </li>
+                        <li><b>Task 7 - </b>Insert 2 new rows into the emp_training table</li>
+                        <li><b>Task 8 - </b>The organization no longer wishes to record the employees training within the database. Therefore, <b>delete</b> the newly created emp_training table.</li>
+                        <li><b>Task 9 - </b>Alter the employees table to include an <b>email address</b> field of type varchar(20)</li>
+                        <li><b>Task 10 - </b>Update the email address of Georgi Facello to <b>gfacello@gmail.com</b>, where <b>emp_no equals to 10001</b></li>
+                    </ul>
+                </div>
+            </div>  
+        </div>
+
+        <div id="data_results" class="container">
+            <div class="row">
+
+                <!-- TASKS MENU ----- -->
+
+                <div class="col-lg-2 order-1 mb-3 d-flex flex-column gap-2 mx-auto align-items-stretch">
+                    <button name="Task_1" class="btn btn-success btn-block" data-sql="SELECT EP.first_name, EP.last_name, EP.hire_date, DE.to_date from employees EP INNER JOIN dept_emp DE ON (EP.emp_id = DE.emp_id) where EP.hire_date = '1991-05-01' AND DE.to_date = '9999-01-01' ORDER BY DE.from_date limit 100;
+                    " onClick="reply_click(this)">Task 1</button>
+                    <button name="Task_2" class="btn btn-success btn-block" data-sql="SELECT EP.*, COUNT (TT.title) as title_count FROM employees EP INNER JOIN titles TT ON EP.emp_id = TT.emp_id GROUP BY EP.emp_id HAVING COUNT (TT.title) > 2 LIMIT 100;   " onClick="reply_click(this)">Task 2</button>
+                    <button name="Task_3" class="btn btn-success btn-block" data-sql="SELECT * from employees where gender = 'F' LIMIT 100;" onClick="reply_click(this)">Task 3</button>
+                    <button name="Task_4" class="btn btn-success btn-block" data-sql="SELECT * from employees where hire_date < '1986-01-01' and last_name = 'Simmel' LIMIT 100;" onClick="reply_click(this)">Task 4</button>
+                    <button name="Task_5" class="btn btn-success btn-block" data-sql="SELECT count (*) as 'Total with B' FROM employees WHERE last_name LIKE 'B%';" onClick="reply_click(this)">Task 5</button>
+                    <button name="Task_6" class="btn btn-success btn-block" data-sql="CREATE TABLE emp_training(trainer_no integer PRIMARY KEY AUTOINCREMENT, first_name varchar(30) NOT NULL, last_name varchar(30) NOT NULL, t_module varchar(20));
+                    " onClick="reply_click(this)">Task 6</button>
+                    <button name="Task_7" class="btn btn-success btn-block" data-sql="INSERT INTO emp_training (first_name, last_name, t_module) VALUES ('Joe', 'Bloggs', 'Google Docs'), ('Fred', 'Bloggs', 'Google Sheets'); SELECT * FROM emp_training LIMIT 2;" onClick="reply_click(this)">Task 7</button>
+                    <button name="Task_8" class="btn btn-success btn-block" data-sql="DELETE from emp_training;" onClick="reply_click(this)">Task 8</button>
+                    <button name="Task_9" class="btn btn-success btn-block" data-sql="ALTER TABLE employees ADD email_address VARCHAR (20); SELECT * FROM employees LIMIT 1;" onClick="reply_click(this)">Task 9</button>
+                    <button name="Task_10" class="btn btn-success btn-block" data-sql="UPDATE employees SET email_address = 'gfacello@gmail.com' WHERE emp_id = 10001; SELECT * FROM employees LIMIT 1;" onClick="reply_click(this)">Task 10</button>
+                </div>
+
+                <!--/ TASKS MENU ----- -->
+
+
+                <div class="col-lg-10 order-2">
+                    <textarea id="commands" class="col-lg-8 order-2 mb-5"></textarea>
+                <div class="d-grid gap-2 mt-2">
+                    <button class="btn btn-primary" type="button" id="execute">Execute</button>
+                    <input type="file" class="form-control" id="dbfile" />
+                    <!-- <input type='file' id='dbfile'/> -->
+                </div>
+
+                <!-- Results will be displayed here -->
+
+                <div id="error" class="error"></div>
+                
+                    <pre id="output">Results will be displayed here</pre>
+
+               </div>
+
+               <!--/ Results will be displayed here -->
+
+
+            </div>
+        </div>
+
+        <!--/ Page content-->
+
+        <!-- SCRIPTS -------- -->
+
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.58.1/mode/sql/sql.min.js"></script>
+        <!-- Bootstrap core JS-->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+        <!-- Core theme JS-->
+        <script src="js/scripts.js"></script>
+        <script type="text/javascript" src="js/gui.js"></script>
+
+         <!--/ SCRIPTS -------- -->
+
+    </body>
+</html>

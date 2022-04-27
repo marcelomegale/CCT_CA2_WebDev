@@ -25,7 +25,7 @@
     </head>
     <body>
 
-        <!-- Responsive navbar-->
+        <!-- Responsive navbar -->
 
         <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
             <div class="container">
@@ -48,27 +48,44 @@
             </div>
         </nav>
 
-        <!-- ---------- navbar-->
+        <!--/ Responsive navbar -->
 
         <!-- Page content-->
-        <div class="container">
+
+        <div id="intro" class="container">
           <div class="row">
                 <div class="col-lg-12 text-center">
-                <h1>PART 1</h1>
-                <p class="lead">Welcome in part 1 of assignment.</p>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas dignissim ante et mollis dictum. Nulla facilisi. Nullam risus sem, eleifend non porttitor nec, pellentesque eu urna. Donec urna leo, pharetra id nulla quis, faucibus consequat leo. In hac habitasse platea dictumst. Mauris sed dapibus ligula, non viverra orci. Curabitur vel nulla mattis, ultrices lectus eget, maximus ipsum.</p>
-                <!--<p>Bootstrap v5.1.3</p>-->
+                    <h1>PART 1</h1>  
                 </div>
+                <div class="col-lg-2 order-1"><img src="img/logo_cct_V.jpg" class="img-fluid" alt="Logo Vertical CCT"></div>
+                <div class="col-lg-10 order-2 mb-3 d-flex flex-column gap-2 mx-auto align-items-stretch">
+                    <p class="lead">Read the questions below and click on the buttons referring to it to see the result.</p>
+                    <ul>
+                        <li><b>Task 1 - </b>List all attributes present in the departments relation</li>
+                        <li><b>Task 2 - </b>List all employee IDs of all past/current employees, their first and last names.</li>
+                        <li><b>Task 3 - </b>List all department titles present in the database</li>
+                        <li><b>Task 4 - </b>List all unique job titles found in the database, and order them alphabetically</li>
+                        <li><b>Task 5 - </b>List all past/current employees names ordered alphabetically in ascending order, i.e.first name and last name in alphabetical order</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div id="data_results" class="container">
+            <div class="row">
 
                 <!-- TASKS MENU ----- -->
 
                 <div class="col-lg-2 order-1 mb-3 d-flex flex-column gap-2 mx-auto align-items-stretch">
-                    <button name="Task_1" class="btn btn-success btn-block" data-sql="SELECT * FROM employees LIMIT 10" onClick="reply_click(this)">Task 1</button>
-                    <button name="Task_2" class="btn btn-success btn-block" data-sql="SELECT emp_id, first_name, last_name FROM employees  LIMIT 5;" onClick="reply_click(this)">Task 2</button>
+                    <button name="Task_1" class="btn btn-success btn-block" data-sql="SELECT * FROM employees LIMIT 100" onClick="reply_click(this)">Task 1</button>
+                    <button name="Task_2" class="btn btn-success btn-block" data-sql="SELECT emp_id, first_name, last_name FROM employees  LIMIT 100;" onClick="reply_click(this)">Task 2</button>
                     <button name="Task_3" class="btn btn-success btn-block" data-sql="SELECT * FROM departments;" onClick="reply_click(this)">Task 3</button>
+                    <button name="Task_3" class="btn btn-success btn-block" data-sql="SELECT DISTINCT title FROM titles ORDER BY title;" onClick="reply_click(this)">Task 4</button>
+                    <button name="Task_3" class="btn btn-success btn-block" data-sql="SELECT first_name, last_name FROM employees  ORDER by first_name, last_name limit 100;" onClick="reply_click(this)">Task 5</button>
                 </div>
 
-                <!-- ---------- MENU -->
+                <!--/ TASKS MENU ----- -->
+
 
                 <div class="col-lg-10 order-2">
                     <textarea id="commands" class="col-lg-8 order-2 mb-5"></textarea>
@@ -77,19 +94,33 @@
                     <input type="file" class="form-control" id="dbfile" />
                     <!-- <input type='file' id='dbfile'/> -->
                 </div>
+
                 <!-- Results will be displayed here -->
+
                 <div id="error" class="error"></div>
                 
                     <pre id="output">Results will be displayed here</pre>
 
                </div>
+
+               <!--/ Results will be displayed here -->
+
+
             </div>
         </div>
+
+        <!--/ Page content-->
+
+        <!-- SCRIPTS -------- -->
+
         <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.58.1/mode/sql/sql.min.js"></script>
         <!-- Bootstrap core JS-->
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
         <!-- Core theme JS-->
         <script src="js/scripts.js"></script>
         <script type="text/javascript" src="js/gui.js"></script>
+
+         <!--/ SCRIPTS -------- -->
+
     </body>
 </html>

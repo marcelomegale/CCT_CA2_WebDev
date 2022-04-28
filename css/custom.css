@@ -84,6 +84,43 @@ pre th{
 }
 */
 
+.cct_header {
+	margin: 40px 0;
+}
+
+.cct_header h1, h2{
+	text-align: left;
+	margin: 20px 0 20px 40px;
+}
+/*
+.cct_header .cct_logo{
+	padding: 30px;
+}
+
+.cct_logo{
+	padding-right: 30px;
+}
+*/
+.cct_content {
+	padding: 30px;
+	font-size: 1.4em;
+	color: #222;
+}
+
+.txt_intro {
+	margin-bottom: 20px;
+	font-weight: bold;
+}
+
+.text_tasks {
+	padding-left: 20px;
+}
+
+.text_tasks ul{
+	margin-left: 30px;
+	font-weight: 400;
+}
+
 body {
 	color: #666;
 	font: 14px/24px "Open Sans", "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", Sans-Serif;

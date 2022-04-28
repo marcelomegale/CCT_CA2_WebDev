@@ -49,42 +49,75 @@
         </nav>
         <!-- Page content-->
         <div class="container">
-          <div class="row">
-            <div class="col-lg-12 text-center">
-                <h1>CA2: Data Manipulation and Validation</h1>
-                <p class="lead">This is part 1</p>
-                <!--<p>Bootstrap v5.1.3</p>-->
-            </div>
-            <div class="col-lg-2 order-1 mb-3 d-flex flex-column gap-2 mx-auto align-items-stretch">
-                <button name="1.1" class="btn btn-success btn-block" data-sql="SELECT * FROM employees LIMIT 10" onClick="reply_click(this)">1.1</button>
-                <button name="1.2" class="btn btn-success btn-block">1.2</button>
-                <button name="1.3" class="btn btn-success btn-block">1.3</button>
-                <!-- <button name="1.4" class="btn btn-secondary btn-block">1.4</button>
-                <button name="1.5" class="btn btn-secondary btn-block">1.5</button>
-                <button name="1.6" class="btn btn-secondary btn-block">1.6</button>-->
-            </div>
-            <div class="col-lg-10 order-2">
-                <textarea id="commands" class="col-lg-8 order-2 mb-5">
-
-                </textarea>
-                <div class="d-grid gap-2 mt-2">
-                    <button class="btn btn-primary" type="button" id="execute">Execute</button>
-                    <input type="file" class="form-control" id="dbfile" />
-                    <!-- <input type='file' id='dbfile'/> -->
+            <div class="row cct_header">
+                <div class="col-lg-2 cct_logo">
+                    <img src="img/cct_logo_V.jpg" class="img-fluid" alt="Logo Vertical CCT">
                 </div>
-                <!-- Results will be displayed here -->
-                <div id="error" class="error"></div>
-                
-                    <pre id="output">Results will be displayed here</pre>
+                <div class="col-lg-10 text-left">
+                    <h1>CCT College Dublin Continuous Assessment</h1>
+                    <h2>CA2: Data Manipulation and Validation</h2>
+                    <!--<p>Bootstrap v5.1.3</p>-->
+                </div>
+            </div>
+            <div class="row cct_content">
+                <div class="col-lg-12 text-left">
+                    <div class="txt_intro">
+                        Produce a set of HTML files with the shared CSS styling that can read the database file and execute each query and answer questions from the Databases CA (Clause 1):
+                    </div>
+                    <div class="text_tasks">
+                        <p>1. Use a SQL.js library and build HTML files, which will render the results of SQL queries run against an SQLite database in a browser:
+                            <ul>
+                                <li>part1.1.html for Part 1.1</li>
+                                <li>part1.2.html for Part 1.2</li>
+                                <li>part1.3.html for Part 1.3</li>
+                            </ul>
+                        </p>
+                        <p>2. You must assume that the original employees.db file is placed in the same folder where the HTML file
+                        is, but you must not include it, since the file exceeds the file size allowed by GitHub, when unarchived
+                        [1 mark]</p>
 
-               </div>
+                        <p>3. Please create .gitignore file (like we did in class) in your repository and include employees.db there, so
+                        this file will be ignored and not be uploaded to GitHub [1 mark]</p>
+
+                        <p>4. CSS file (style.css) should be in the same folder – you are free to use Bootstrap, if desired [1 mark]</p>
+
+                        <p>5. Each question should have its question number and any sub-part numbers included in the button;
+                        Make sure you link all HTML files together in the upper right menu and the current page is shown in
+                        bold [1 mark]</p>
+
+                        <p>6. Each query should have a green Execute button that executes each query and renders the results in the
+                        destination <div> [1 mark]</p>
+
+                        <p>7. Each successful SQL query output will count as 0.5 marks in the WebDev CA (use must use LIMIT 100
+                        or 1000 in your SQL code as some of the queries with 1M records in the database can’t be processed by
+                        a browser) [10 marks]</p>
+
+                        <p>8. Make sure you use HTML Escape Characters when putting SQL commands inside data-sql attribute
+                        [1 mark]</p>
+
+                        <p>9. Your HTML page should be well-formed and pass validation – <a href="https://validator.w3.org" target="_blank">https://validator.w3.org </a> [1 mark]</p>
+
+                        <p>10. The CSS file should be external, be shared among all HTML pages and should pass validation – <a href="https://jigsaw.w3.org/css-validator/" target="_blank">https://jigsaw.w3.org/css-validator/ </a>
+                        [1 mark]</p>
+
+                        <p>11. All the files should be presented in a public GitHub repository with at least 6 commits history and the
+                        full link to this repository (of the following format: https://github.com/<your username>/webdev_ca2)
+                        must be included on the cover page of the submitted PDF – this aspect is also critical and is being
+                        marked (all final files must also be included in the zip with your submission) [1 mark]</p>
+                    </div>
+                </div>
             </div>
         </div>
+
+        <!-- SCRIPTS -------- -->
+
         <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.58.1/mode/sql/sql.min.js"></script>
         <!-- Bootstrap core JS-->
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
         <!-- Core theme JS-->
         <script src="js/scripts.js"></script>
         <script type="text/javascript" src="js/gui.js"></script>
+
+        <!--/ SCRIPTS -------- -->
     </body>
 </html>

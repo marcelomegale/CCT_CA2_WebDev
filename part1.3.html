@@ -67,44 +67,27 @@
                         <li><b>Task 4 - </b>List all unique employees’ last and first names (using GROUP BY method) that have a current salary (i.e., to_date equals to 9999-01-01) greater than 90000, outputting both names in descending order (sort by the last name first and then the first name) and also displaying their current salaries (using the INNER JOIN method).</li>
                         <li><b>Task 5 - </b>First name, last name, all salary dates and related amounts for the employee with employee number 10012.</li>
                         <li><b>Task 6 - </b>In relation to the table named salaries in Figure 1 above. Answer in text:
-                            <!-- Button trigger modal -->
-                            <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter">
-                                Launch demo modal
-                            </button>
-                            <!-- Modal -->
-                            <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
-                                <div class="modal-dialog modal-dialog-centered" role="document">
-                                <div class="modal-content">
-                                    <div class="modal-header">
-                                    <h5 class="modal-title" id="exampleModalLongTitle">Modal title</h5>
-                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                        <span aria-hidden="true">&times;</span>
-                                    </button>
-                                    </div>
-                                    <div class="modal-body">
-                                    ...
-                                    </div>
-                                    <div class="modal-footer">
-                                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                                    <button type="button" class="btn btn-primary">Save changes</button>
-                                    </div>
-                                </div>
-                                </div>
-                            </div>                            
-                        <ul>
-                            <li>a) What is the degree of this table?<br>
-                                <b>Answer: many-to-one (N:1): Binary</b>
-                            </li>
-                            <li>b) What column(s), if any, make(s) up the primary key?<br>
-                                <b>Answer: Emp_id</b>>
-                            </li>
-                            <li>c) What column(s), if any, make(s) up the foreign key?<br>
-                                <b>Answer: From_date</b>
-                            </li>
-                        </ul>
+                            <a tabindex="0" class="btn-link" role="button"  data-bs-toggle="modal" data-bs-target="#task6">
+                                Click for answer
+                            </a>                          
+                            <!--<ul>
+                                <li>a) What is the degree of this table?
+                                    <a tabindex="0" class="btn-link" role="button" data-bs-toggle="popover" data-bs-trigger="focus" title="a) What is the degree of this table?" data-bs-content="Answer: many-to-one (N:1): Binary">Click for answer</a>
+                                </li>
+                                <li>b) What column(s), if any, make(s) up the primary key?
+                                    <a tabindex="0" class="btn-link" role="button" data-bs-toggle="popover" data-bs-trigger="focus" title="b) What column(s), if any, make(s) up the primary key?" data-bs-content="Answer: Emp_id">Click for answer</a>
+                                </li>
+                                <li>c) What column(s), if any, make(s) up the foreign key?
+                                    <a tabindex="0" class="btn-link" role="button" data-bs-toggle="popover" data-bs-trigger="focus" title="c) What column(s), if any, make(s) up the foreign key?" data-bs-content="Answer: From_date">Click for answer</a>
+                                </li>
+                            </ul>-->
                         </li>
                         <li><b>Task 7 - </b>In the given schema, the tables dept_emp, dept_manager, salaries, titles have composite keys. Explain for each relation why this is the case? Support your answer with appropriate references:
-                            <ul>
+
+                            <a tabindex="0" class="btn-link" role="button"  data-bs-toggle="modal" data-bs-target="#exampleModal">
+                                Click for answer
+                            </a>
+                            <!--<ul>
                                 <li><b>dept_emp:</b><br>
                                     - emp_id: identifies the table through the uniqueness of a record and its obligation not to be null.<br>
                                     - dept_id: Primary key placed in another table (departments), together they form a unique identification formed by two columns.                                    
@@ -122,7 +105,7 @@
                                     - from_date: Foreign key, used for relationship with other tables (salaries, dept_emp)<br>
                                     - title: Identifies the table through the uniqueness of a record and its obligation not to be null.
                                 </li>
-                            </ul>
+                            </ul>-->
                         </li>
                     </ul>
                 </div>
@@ -169,6 +152,9 @@
 
         <!--/ Page content-->
 
+
+
+        
         <!-- SCRIPTS -------- -->
 
         <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.58.1/mode/sql/sql.min.js"></script>
@@ -177,8 +163,85 @@
         <!-- Core theme JS-->
         <script src="js/scripts.js"></script>
         <script type="text/javascript" src="js/gui.js"></script>
+        <script>
+            var popoverTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="popover"]'))
+            var popoverList = popoverTriggerList.map(function (popoverTriggerEl) {
+            return new bootstrap.Popover(popoverTriggerEl)
+            })
+        </script>
+        <script>
+            var myModal = document.getElementById('#exampleModal')
+            var myInput = document.getElementById('myInput')
+
+            myModal.addEventListener('shown.bs.modal', function () {
+            myInput.focus()
+            })
+        </script>
 
          <!--/ SCRIPTS -------- -->
+        <!-- Modal -->
+        <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Answers task 7</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <ul>
+                        <li><b>dept_emp:</b><br>
+                            - emp_id: identifies the table through the uniqueness of a record and its obligation not to be null.<br>
+                            - dept_id: Primary key placed in another table (departments), together they form a unique identification formed by two columns.                                    
+                        </li>
+                        <li><b>dept_manager:</b><br>
+                            - emp_id: Primary key placed in another table (departments), together they form a unique identification formed by two columns.<br>
+                            - dept_id: identifies the table through the uniqueness of a record and its obligation not to be null.                                    
+                        </li>
+                        <li><b>salaries:</b><br>
+                            - emp_id: Primary key placed in another table (employees)<br>
+                            - from_date: Foreign key, used for relationship with other tables (titles, dept_emp)
+                        </li>
+                        <li><b>titles:</b><br>
+                            - emp_id: Primary key placed in another table (employees)<br>
+                            - from_date: Foreign key, used for relationship with other tables (salaries, dept_emp)<br>
+                            - title: Identifies the table through the uniqueness of a record and its obligation not to be null.
+                        </li>
+                    </ul>
+                </div>
+                <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                </div>
+            </div>
+            </div>
+        </div>
+        
+        <!-- Modal -->
+        <div class="modal fade" id="task6" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Answers task 7</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <ul>
+                        <li><b>a) What is the degree of this table?</b><br>
+                            <b>Answer:</b> many-to-one (N:1): Binary
+                        </li>
+                        <li><b>b) What column(s), if any, make(s) up the primary key?</b><br>
+                            <b>Answer:</b> Emp_id
+                        </li>
+                        <li><b>c) What column(s), if any, make(s) up the foreign key?</b><br>
+                            <b>Answer:</b> From_date
+                        </li>
+                    </ul>
+                </div>
+                <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                </div>
+            </div>
+            </div>
+        </div>
 
     </body>
 </html>

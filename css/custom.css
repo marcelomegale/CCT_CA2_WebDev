@@ -84,6 +84,16 @@ pre th{
 }
 */
 
+.b_test{
+	border: 1px solid red;
+}
+.b_blue{
+	border: 1px solid blue;
+}
+.b_green{
+	border: 1px solid green;
+}
+
 .cct_header {
 	margin: 40px 0;
 }
@@ -91,6 +101,10 @@ pre th{
 .cct_header h1, h2{
 	text-align: left;
 	margin: 20px 0 20px 40px;
+}
+
+.cct_title_page h1{
+	margin: 60px 0;
 }
 /*
 .cct_header .cct_logo{
@@ -120,6 +134,18 @@ pre th{
 	margin-left: 30px;
 	font-weight: 400;
 }
+
+#cover_page div{
+	border: 1px solid rgb(219, 219, 219);
+	padding: 15px 5px;
+}
+
+.cover_table{
+	margin-top: 60px;
+}
+
+
+/*## TABLES CUSTOM ############################################*/
 
 body {
 	color: #666;

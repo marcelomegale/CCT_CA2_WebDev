@@ -57,26 +57,32 @@
                 </div>
                 <div class="col-lg-2 order-1"><img src="img/cct_logo_V.jpg" class="img-fluid" alt="Logo Vertical CCT"></div>
                 <div class="col-lg-10 order-2 mb-3 d-flex flex-column gap-2 mx-auto align-items-stretch">
-                    <p class="lead">Read the questions below and click on the buttons referring to it to see the result.</p>
-                    <ul>
-                        <li><b>Task 1 - </b>The number of all employees that started on <b>1991-05-01</b></li>
-                        <li><b>Task 2 - </b>List all emp_no who have had strictly <b>more than 2</b> titles and display the total number of the titles they have had</li>
-                        <li><b>Task 3 - </b>List <b>female employees</b> (past/current) together with all other relation attributes</li>
-                        <li><b>Task 4 - </b>List past/current employees hired prior to <b>1986-01-01</b> with the surname <b>Simmel</b></li>
-                        <li><b>Task 5 - </b>How many past/current employees’ last name begins with the <b>capital letter "B"</b>? Use a column alias <b>Total with "B"</b> to output your results</li>
-                        <li><b>Task 6 - </b>Create a new table called emp_training with 3 columns
+                    <!-- <p class="lead">Read the questions below and click on the buttons referring to it to see the result.</p> -->
+                    <a class="btn btn-outline-secondary" data-bs-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample">
+                        Click here to see the questions and click on the buttons referring to it to see the result.
+                    </a>
+                    <div class="collapse" id="collapseExample">
                         <ul>
-                            <li><em>trainer_no:</em> this should be the primary key and is of type integer and is an auto-increment.</li>
-                            <li><em>first_name:</em> this data type is varchar(30) and should not be NULL</li>
-                            <li><em>last_name:</em> this data type is varchar(30) and should not be NULL</li>
-                            <li><em>t_module:</em> this data type is varchar(20)</li>
+                            <li><b>Task 1 - </b>The number of all employees that started on <b>1991-05-01</b></li>
+                            <li><b>Task 2 - </b>List all emp_no who have had strictly <b>more than 2</b> titles and display the total number of the titles they have had</li>
+                            <li><b>Task 3 - </b>List <b>female employees</b> (past/current) together with all other relation attributes</li>
+                            <li><b>Task 4 - </b>List past/current employees hired prior to <b>1986-01-01</b> with the surname <b>Simmel</b></li>
+                            <li><b>Task 5 - </b>How many past/current employees’ last name begins with the <b>capital letter "B"</b>? Use a column alias <b>Total with "B"</b> to output your results</li>
+                            <li><b>Task 6 - </b>Create a new table called emp_training with 3 columns
+                            <ul>
+                                <li><em>trainer_no:</em> this should be the primary key and is of type integer and is an auto-increment.</li>
+                                <li><em>first_name:</em> this data type is varchar(30) and should not be NULL</li>
+                                <li><em>last_name:</em> this data type is varchar(30) and should not be NULL</li>
+                                <li><em>t_module:</em> this data type is varchar(20)</li>
+                            </ul>
+                            </li>
+                            <li><b>Task 7 - </b>Insert 2 new rows into the emp_training table</li>
+                            <li><b>Task 8 - </b>The organization no longer wishes to record the employees training within the database. Therefore, <b>delete</b> the newly created emp_training table.</li>
+                            <li><b>Task 9 - </b>Alter the employees table to include an <b>email address</b> field of type varchar(20)</li>
+                            <li><b>Task 10 - </b>Update the email address of Georgi Facello to <b>gfacello@gmail.com</b>, where <b>emp_no equals to 10001</b></li>
                         </ul>
-                        </li>
-                        <li><b>Task 7 - </b>Insert 2 new rows into the emp_training table</li>
-                        <li><b>Task 8 - </b>The organization no longer wishes to record the employees training within the database. Therefore, <b>delete</b> the newly created emp_training table.</li>
-                        <li><b>Task 9 - </b>Alter the employees table to include an <b>email address</b> field of type varchar(20)</li>
-                        <li><b>Task 10 - </b>Update the email address of Georgi Facello to <b>gfacello@gmail.com</b>, where <b>emp_no equals to 10001</b></li>
-                    </ul>
+                    </div>
+
                 </div>
             </div>  
         </div>
@@ -131,11 +137,20 @@
         <!-- SCRIPTS -------- -->
 
         <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.58.1/mode/sql/sql.min.js"></script>
+
         <!-- Bootstrap core JS-->
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+
         <!-- Core theme JS-->
         <script src="js/scripts.js"></script>
         <script type="text/javascript" src="js/gui.js"></script>
+        
+        <script>
+            var myCollapsible = document.getElementById('collapseExample')
+            myCollapsible.addEventListener('hidden.bs.collapse', function () {
+            // do something...
+            })
+        </script>
 
          <!--/ SCRIPTS -------- -->
 

@@ -57,55 +57,29 @@
                 </div>
                 <div class="col-lg-2 order-1"><img src="img/cct_logo_V.jpg" class="img-fluid" alt="Logo Vertical CCT"></div>
                 <div class="col-lg-10 order-2 mb-3 d-flex flex-column gap-2 mx-auto align-items-stretch">
-                    <p class="lead">Read the questions below and click on the buttons referring to it to see the result.</p>
-                    <ul>
-                        <li><b>Task 1 - </b>List the number of male managers and female managers who work for each department. Make sure to display the gender, the number of employees (renamed as num_empGender) and dept_no, ordered by department number in an ascendant order.</b></li>
-                        <li><b>Task 2 - </b>List the average salary of males and females employees whose title is "Technique Leader". In your result table should appear, gender, average salary named as avg_salary and title.</li>
-                        <li><b>Task 3 - </b>The number of employees that have a current salary (i.e., to_date equals to 9999-01-01) between 90000 and 90040.</li>
-                        <li><b>Task 4 - </b>List all unique employees’ last and first names (using GROUP BY method) that have a current salary (i.e., to_date equals to 9999-01-01) greater than 90000, outputting both names in descending order (sort by the last name first and then the first name) and also displaying their current salaries (using the INNER JOIN method).</li>
-                        <li><b>Task 5 - </b>First name, last name, all salary dates and related amounts for the employee with employee number 10012.</li>
-                        <li><b>Task 6 - </b>In relation to the table named salaries in Figure 1 above. Answer in text:
-                            <a tabindex="0" class="btn-link" role="button"  data-bs-toggle="modal" data-bs-target="#task6">
-                                Click for answer
-                            </a>                          
-                            <!--<ul>
-                                <li>a) What is the degree of this table?
-                                    <a tabindex="0" class="btn-link" role="button" data-bs-toggle="popover" data-bs-trigger="focus" title="a) What is the degree of this table?" data-bs-content="Answer: many-to-one (N:1): Binary">Click for answer</a>
-                                </li>
-                                <li>b) What column(s), if any, make(s) up the primary key?
-                                    <a tabindex="0" class="btn-link" role="button" data-bs-toggle="popover" data-bs-trigger="focus" title="b) What column(s), if any, make(s) up the primary key?" data-bs-content="Answer: Emp_id">Click for answer</a>
-                                </li>
-                                <li>c) What column(s), if any, make(s) up the foreign key?
-                                    <a tabindex="0" class="btn-link" role="button" data-bs-toggle="popover" data-bs-trigger="focus" title="c) What column(s), if any, make(s) up the foreign key?" data-bs-content="Answer: From_date">Click for answer</a>
-                                </li>
-                            </ul>-->
-                        </li>
-                        <li><b>Task 7 - </b>In the given schema, the tables dept_emp, dept_manager, salaries, titles have composite keys. Explain for each relation why this is the case? Support your answer with appropriate references:
+                    <a class="btn btn-outline-secondary" data-bs-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample">
+                        Click here to see the questions and click on the buttons referring to it to see the result.
+                    </a>
+                    <div class="collapse" id="collapseExample">
+                        <ul>
+                            <li><b>Task 1 - </b>List the number of male managers and female managers who work for each department. Make sure to display the gender, the number of employees (renamed as num_empGender) and dept_no, ordered by department number in an ascendant order.</b></li>
+                            <li><b>Task 2 - </b>List the average salary of males and females employees whose title is "Technique Leader". In your result table should appear, gender, average salary named as avg_salary and title.</li>
+                            <li><b>Task 3 - </b>The number of employees that have a current salary (i.e., to_date equals to 9999-01-01) between 90000 and 90040.</li>
+                            <li><b>Task 4 - </b>List all unique employees’ last and first names (using GROUP BY method) that have a current salary (i.e., to_date equals to 9999-01-01) greater than 90000, outputting both names in descending order (sort by the last name first and then the first name) and also displaying their current salaries (using the INNER JOIN method).</li>
+                            <li><b>Task 5 - </b>First name, last name, all salary dates and related amounts for the employee with employee number 10012.</li>
+                            <li><b>Task 6 - </b>In relation to the table named salaries in Figure 1 above. Answer in text:
+                                <a tabindex="0" class="btn-link" role="button"  data-bs-toggle="modal" data-bs-target="#task6">
+                                    Click for answer
+                                </a>                          
+                            </li>
+                            <li><b>Task 7 - </b>In the given schema, the tables dept_emp, dept_manager, salaries, titles have composite keys. Explain for each relation why this is the case? Support your answer with appropriate references:
 
-                            <a tabindex="0" class="btn-link" role="button"  data-bs-toggle="modal" data-bs-target="#exampleModal">
-                                Click for answer
-                            </a>
-                            <!--<ul>
-                                <li><b>dept_emp:</b><br>
-                                    - emp_id: identifies the table through the uniqueness of a record and its obligation not to be null.<br>
-                                    - dept_id: Primary key placed in another table (departments), together they form a unique identification formed by two columns.                                    
-                                </li>
-                                <li><b>dept_manager:</b><br>
-                                    - emp_id: Primary key placed in another table (departments), together they form a unique identification formed by two columns.<br>
-                                    - dept_id: identifies the table through the uniqueness of a record and its obligation not to be null.                                    
-                                </li>
-                                <li><b>salaries:</b><br>
-                                    - emp_id: Primary key placed in another table (employees)<br>
-                                    - from_date: Foreign key, used for relationship with other tables (titles, dept_emp)
-                                </li>
-                                <li><b>titles:</b><br>
-                                    - emp_id: Primary key placed in another table (employees)<br>
-                                    - from_date: Foreign key, used for relationship with other tables (salaries, dept_emp)<br>
-                                    - title: Identifies the table through the uniqueness of a record and its obligation not to be null.
-                                </li>
-                            </ul>-->
-                        </li>
-                    </ul>
+                                <a tabindex="0" class="btn-link" role="button"  data-bs-toggle="modal" data-bs-target="#exampleModal">
+                                    Click for answer
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
                 </div>
             </div>  
         </div>
@@ -156,27 +130,22 @@
         <!-- SCRIPTS -------- -->
 
         <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.58.1/mode/sql/sql.min.js"></script>
+
         <!-- Bootstrap core JS-->
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+
         <!-- Core theme JS-->
         <script src="js/scripts.js"></script>
         <script type="text/javascript" src="js/gui.js"></script>
+        
         <script>
-            var popoverTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="popover"]'))
-            var popoverList = popoverTriggerList.map(function (popoverTriggerEl) {
-            return new bootstrap.Popover(popoverTriggerEl)
-            })
-        </script>
-        <script>
-            var myModal = document.getElementById('#exampleModal')
-            var myInput = document.getElementById('myInput')
-
-            myModal.addEventListener('shown.bs.modal', function () {
-            myInput.focus()
+            var myCollapsible = document.getElementById('collapseExample')
+            myCollapsible.addEventListener('hidden.bs.collapse', function () {
+            // do something...
             })
         </script>
 
-        <!--/ SCRIPTS -------- -->
+         <!--/ SCRIPTS -------- -->
         
         <!-- Modal -->
         <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">

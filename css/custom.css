@@ -144,6 +144,16 @@ pre th{
 	margin-top: 60px;
 }
 
+#intro{
+	margin-bottom: 50px;
+}
+
+#error{
+	text-align: center;
+	font-size: 1.3em;
+	color: red;
+}
+
 
 /*## TABLES CUSTOM ############################################*/
 

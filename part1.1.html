@@ -57,14 +57,20 @@
                 </div>
                 <div class="col-lg-2 order-1"><img src="img/cct_logo_V.jpg" class="img-fluid" alt="Logo Vertical CCT"></div>
                 <div class="col-lg-10 order-2 mb-3 d-flex flex-column gap-2 mx-auto align-items-stretch">
-                    <p class="lead">Read the questions below and click on the buttons referring to it to see the result.</p>
-                    <ul>
-                        <li><b>Task 1 - </b>List all attributes present in the departments relation</li>
-                        <li><b>Task 2 - </b>List all employee IDs of all past/current employees, their first and last names.</li>
-                        <li><b>Task 3 - </b>List all department titles present in the database</li>
-                        <li><b>Task 4 - </b>List all unique job titles found in the database, and order them alphabetically</li>
-                        <li><b>Task 5 - </b>List all past/current employees names ordered alphabetically in ascending order, i.e.first name and last name in alphabetical order</li>
-                    </ul>
+                    <!-- <p class="lead">Read the questions below and click on the buttons referring to it to see the result.</p> -->
+                    <a class="btn btn-outline-secondary" data-bs-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample">
+                        Click here to see the questions and click on the buttons referring to it to see the result.
+                    </a>
+                    <div class="collapse" id="collapseExample">
+                        <ul>
+                            <li><b>Task 1 - </b>List all attributes present in the departments relation</li>
+                            <li><b>Task 2 - </b>List all employee IDs of all past/current employees, their first and last names.</li>
+                            <li><b>Task 3 - </b>List all department titles present in the database</li>
+                            <li><b>Task 4 - </b>List all unique job titles found in the database, and order them alphabetically</li>
+                            <li><b>Task 5 - </b>List all past/current employees names ordered alphabetically in ascending order, i.e.first name and last name in alphabetical order</li>
+                        </ul>
+                    </div>
+
                 </div>
             </div>
         </div>
@@ -112,12 +118,20 @@
         <!-- SCRIPTS -------- -->
 
         <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.58.1/mode/sql/sql.min.js"></script>
+
         <!-- Bootstrap core JS-->
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+
         <!-- Core theme JS-->
         <script src="js/scripts.js"></script>
         <script type="text/javascript" src="js/gui.js"></script>
 
+        <script>
+            var myCollapsible = document.getElementById('collapseExample')
+            myCollapsible.addEventListener('hidden.bs.collapse', function () {
+            // do something...
+            })
+        </script>
          <!--/ SCRIPTS -------- -->
 
     </body>

@@ -87,7 +87,7 @@
         <div id="data_results" class="container">
             <div class="row">
 
-                <!-- TASKS MENU ----- -->
+                <!-- TASKS MENU  -->
 
                 <div class="col-lg-2 order-1 mb-3 d-flex flex-column gap-2 mx-auto align-items-stretch">
                     <button name="Task_1" class="btn btn-success btn-block" data-sql="SELECT DP.dept_id , dept_name , gender, COUNT (EP.emp_id) AS num_empGender FROM departments DP INNER JOIN dept_manager DM on DP.dept_id = DM.dept_id INNER JOIN employees EP on DM.emp_id = EP.emp_id GROUP by DP.dept_id, gender order by DP.dept_id;" onClick="reply_click(this)">Task 1</button>
@@ -97,7 +97,7 @@
                     <button name="Task_5" class="btn btn-success btn-block" data-sql="SELECT EP.first_name, EP.last_name, SL.from_date, SL.to_date, SL.salary FROM employees EP INNER JOIN salaries SL ON EP.emp_id = SL.emp_id WHERE EP.emp_id = 10012;" onClick="reply_click(this)">Task 5</button>
                 </div>
 
-                <!--/ TASKS MENU ----- -->
+                <!--/ TASKS MENU  -->
 
 
                 <div class="col-lg-10 order-2">
@@ -122,12 +122,12 @@
             </div>
         </div>
 
-        <!--/ Page content-->
+        <!--/ Page content -->
 
 
 
         
-        <!-- SCRIPTS -------- -->
+        <!-- SCRIPTS  -->
 
         <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.58.1/mode/sql/sql.min.js"></script>
 
@@ -145,7 +145,7 @@
             })
         </script>
 
-         <!--/ SCRIPTS -------- -->
+         <!--/ SCRIPTS  -->
         
         <!-- Modal -->
         <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
